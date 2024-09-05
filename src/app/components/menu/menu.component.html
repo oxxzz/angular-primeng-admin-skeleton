@@ -1,0 +1,39 @@
+<div class="select-none pt-2">
+  @if (collasped) {
+  <div class="text-center w-full flex flex-wrap justify-content-center flex-column fadein animation-duration-300 gap-2">
+    @for (item of items; track $index) {
+    @if(item.group) {
+    <p-divider type="dashed" styleClass="m-0 p-0 "></p-divider>
+    }
+    @for (item of item.items; track $index) {
+    <div class="cursor-pointer text-800 flex flex-column justify-content-center">
+      <span [class]="item.icon + ' hover:surface-100 border-round p-2 w-full'"></span>
+      <!-- <span class="text-sm mt-1">{{ item.label!.length > 2 ? item.label!.substring(0, 2): item.label }}</span> -->
+    </div>
+    }
+    }
+  </div>
+  } @else {
+  @for (item of items; track $index) {
+  @if(item.group.length) {
+  <p-divider type="dashed" styleClass="border-gray-100"></p-divider>
+  <span class="p-3 m-1 my-1 text-sm text-400">{{ item.group }}</span>
+  }
+  <p-panelMenu [model]="item.items"
+    styleClass="w-full fadein animation-duration-300 h-full overflow-x-hidden overflow-y-scroll px-2">
+    <ng-template pTemplate="item" let-item>
+      <span pRipple [routerLink]="item.url && !item.items?.length ? item.url : null" [routerLinkActive]="['p-focus']"
+        class="flex align-items-center p-1 my-1 cursor-pointer hover:surface-100 border-round no-underline relative">
+        <i [class]="item.icon + ' ml-1'"></i>
+        <span class="ml-2 text-800">
+          {{ item.label }}
+        </span>
+        @if (!item.items.length && item.shortcut) { <span class="ml-auto border-round surface-100 text-xs px-1"> {{
+          item.shortcut }} </span> }
+        @if (item.items.length) { <i class="pi pi-sitemap ml-auto border-round surface-50 text-sm p-1"></i> }
+      </span>
+    </ng-template>
+  </p-panelMenu>
+  }
+  }
+</div>

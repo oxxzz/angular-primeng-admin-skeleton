@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/aura-light-noir/theme.css";
+@import "primeflex/primeflex.css";
+// @import "primeng/resources/themes/aura-light-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeicons/primeicons.css";
+
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+  a {
+    text-decoration: none !important;
+  }
+  button,
+  input {
+    box-shadow: none;
+  }
+}
+
+html {
+  font-size: 13.5px !important;
+  font-family: "Hiragino Sans GB", Helvetica, Tahoma, Arial, "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+  min-width: 920px !important;
+  background: rgba(0, 102, 255, 0.028);
+}
+
+body {
+  margin: 0;
+}
+.z-top {
+  z-index: 99999999 !important;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none !important;
+}
