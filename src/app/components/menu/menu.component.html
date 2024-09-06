@@ -20,10 +20,10 @@
   <span class="p-3 m-1 my-1 text-sm text-400">{{ item.group }}</span>
   }
   <p-panelMenu [model]="item.items"
-    styleClass="w-full fadein animation-duration-300 h-full overflow-x-hidden overflow-y-scroll px-2">
+    styleClass="w-full fadein animation-duration-300 h-full overflow-x-hidden overflow-y-scroll px-2 ">
     <ng-template pTemplate="item" let-item>
       <span pRipple [routerLink]="item.url && !item.items?.length ? item.url : null" [routerLinkActive]="['p-focus']"
-        class="flex align-items-center p-1 my-1 cursor-pointer hover:surface-100 border-round no-underline relative">
+        class="flex align-items-center p-1  my-1 cursor-pointer hover:surface-100 border-round no-underline relative">
         <i [class]="item.icon + ' ml-1'"></i>
         <span class="ml-2 text-800">
           {{ item.label }}

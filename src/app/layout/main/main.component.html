@@ -38,7 +38,7 @@
   </div>
   <div class="flex overflow-hidden h-full">
     <div #sidebar [class]="{'w-14rem': !collapse(), 'w-4rem' : collapse()}"
-      class="ease col-fixed p-0 relative bg-white border-right-1 border-gray-200 flex-none">
+      class="ease col-fixed p-0 relative bg-white  border-right-1 border-gray-200 flex-none">
       <div class="w-full h-full overflow-auto scrollbar-hidden" (mouseover)="onMouseOverSidebar($event, sidebar)"
         (mouseleave)="onMouseLeaveSidebar($event, sidebar)">
         <app-menu [collasped]="collapse()" [items]="navs()" />
